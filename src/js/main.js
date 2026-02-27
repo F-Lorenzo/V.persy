@@ -56,3 +56,18 @@ if (track) {
 
 console.log("App initialized with infinite carousel.");
 
+// WhatsApp Redirect Logic
+const whatsappBtn = document.getElementById('whatsapp-btn');
+const whatsappInput = document.getElementById('whatsapp-message');
+
+if (whatsappBtn && whatsappInput) {
+    whatsappBtn.addEventListener('click', () => {
+        const message = encodeURIComponent(whatsappInput.value);
+        if (message) {
+            window.open(`https://wa.me/5491138566700?text=${message}`, '_blank');
+        } else {
+            alert('Por favor, escriba un mensaje antes de enviar.');
+        }
+    });
+}
+
